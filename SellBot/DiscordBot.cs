@@ -47,7 +47,7 @@ namespace SellBot
             await _client.SetCustomStatusAsync("powered by sellapi.io");
             await _client.SetGameAsync("powered by sellapi.io", null, ActivityType.Watching);
 
-            _commandHandler = new CommandHandler(_client);
+            _commandHandler = new CommandHandler(_client, sellApi);
             _componentHandler = new ComponentHandler(sellApi);
         }
 

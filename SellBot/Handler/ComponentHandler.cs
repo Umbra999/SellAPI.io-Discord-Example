@@ -43,7 +43,7 @@ namespace SellBot.Handler
 
                 case "buysecond":
                 {
-                    Invoice invoice = await _api.CreateCryptoInvoice(PaymentMethod.litecoin, Settings.DiscordNotificationCallback, 50, Settings.ltcPayoutAddress);
+                    Invoice invoice = await _api.CreateCryptoInvoice(PaymentMethod.litecoin, Settings.DiscordNotificationCallback, 50, Settings.ltcPayoutAddress, $"This is a invoice for {message.User.Id}");
                     if (invoice == null || invoice.details == null)
                     {
                         await message.RespondAsync(null, null, false, true, null, null, MessageHelper.FailedEmbed("Failed to create invoice"));

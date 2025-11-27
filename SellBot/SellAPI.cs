@@ -85,7 +85,12 @@ namespace SellBot
             solana = 3,
             doge = 4,
             tron = 5,
-            rewarble = 6
+            polygon = 6,
+            arbitrum = 7,
+            bitcoin_cash = 8,
+            usdt_erc20 = 9,
+            usdt_sol = 10,
+            rewarble = 11
         }
 
         public class Invoice

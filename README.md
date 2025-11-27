@@ -1,6 +1,7 @@
 # Discord Seller Bot (C#) — SellAPI.io Integration
 
-A C# Discord bot that automates digital product sales via **SellAPI.io**.  
+A C# Discord bot that automates digital product sales via **SellAPI.io**.
+Docs are available at **docs.sellapi.io**.
 This bot provides invoice creation, and simple slash-command controls.
 
 ---

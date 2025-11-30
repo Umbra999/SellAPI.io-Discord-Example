@@ -24,13 +24,14 @@ namespace SellBot
             return JsonSerializer.Deserialize<Invoice>(json);
         }
 
-        public async Task<Invoice> CreateCryptoInvoice(PaymentMethod method, string callbackUrl, decimal priceUsd, string addressOut, string customData = null)
+        public async Task<Invoice> CreateCryptoInvoice(PaymentMethod method, string callbackUrl, decimal priceUsd, decimal underpayPercentage, string addressOut, string customData = null)
         {
             var payload = new
             {
                 method = (byte)method,
                 callbackUrl = callbackUrl,
                 price_usd = priceUsd,
+                underpay_percentage = underpayPercentage,
                 customData = customData,
                 payout_address = addressOut
             };
@@ -100,6 +101,7 @@ namespace SellBot
             public PaymentMethod method { get; set; }
             public string callbackUrl { get; set; }
             public decimal price_usd_display { get; set; }
+            public decimal underpay_percentage { get; set; }
             public long expiration { get; set; }
             public string customData { get; set; }
             public object details { get; set; }

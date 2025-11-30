@@ -21,7 +21,7 @@ namespace SellBot.Handler
             {
                 case "buyfirst":
                 {
-                    Invoice invoice = await _api.CreateCryptoInvoice(PaymentMethod.bitcoin, Settings.DiscordNotificationCallback, 30, Settings.btcPayoutAddress);
+                    Invoice invoice = await _api.CreateCryptoInvoice(PaymentMethod.bitcoin, Settings.DiscordNotificationCallback, 30,0, Settings.btcPayoutAddress);
                     if (invoice == null || invoice.details == null)
                     {
                         await message.RespondAsync(null, null, false, true, null, null, MessageHelper.FailedEmbed("Failed to create invoice"));
@@ -43,7 +43,7 @@ namespace SellBot.Handler
 
                 case "buysecond":
                 {
-                    Invoice invoice = await _api.CreateCryptoInvoice(PaymentMethod.litecoin, Settings.DiscordNotificationCallback, 50, Settings.ltcPayoutAddress, $"This is a invoice for {message.User.Id}");
+                    Invoice invoice = await _api.CreateCryptoInvoice(PaymentMethod.litecoin, Settings.DiscordNotificationCallback, 50, 5, Settings.ltcPayoutAddress, $"This is a invoice for {message.User.Id}");
                     if (invoice == null || invoice.details == null)
                     {
                         await message.RespondAsync(null, null, false, true, null, null, MessageHelper.FailedEmbed("Failed to create invoice"));
